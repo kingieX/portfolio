@@ -1,10 +1,10 @@
-import React from 'react';
-import { Github, ChevronDown } from 'lucide-react';
-import { motion } from 'motion/react';
+import React from "react";
+import { Github, ChevronDown } from "lucide-react";
+import { motion } from "motion/react";
 
 export function Hero() {
   const scrollToProjects = () => {
-    const element = document.getElementById('projects');
+    const element = document.getElementById("projects");
     if (element) {
       const offset = 80;
       const elementPosition = element.getBoundingClientRect().top;
@@ -12,7 +12,7 @@ export function Hero() {
 
       window.scrollTo({
         top: offsetPosition,
-        behavior: 'smooth'
+        behavior: "smooth",
       });
     }
   };
@@ -43,7 +43,9 @@ export function Hero() {
           </div>
 
           <h1 className="text-5xl md:text-7xl mb-6 tracking-tight">
-            <span className="block text-gray-600 dark:text-[#9CA3AF]">Hi, I'm</span>
+            <span className="block text-gray-600 dark:text-[#9CA3AF]">
+              Hi, I'm
+            </span>
             <span className="block bg-gradient-to-r from-[#4F8CFF] to-[#00AEEF] bg-clip-text text-transparent">
               Nnachi Chima Kingsley
             </span>
@@ -54,8 +56,9 @@ export function Hero() {
           </p>
 
           <p className="text-lg text-gray-600 dark:text-[#9CA3AF] max-w-3xl mx-auto mb-12 leading-relaxed">
-            Passionate full-stack engineer building high-performance, user-focused solutions 
-            with JavaScript, TypeScript, React, Next.js, and Python.
+            Passionate full-stack engineer building high-performance,
+            user-focused solutions with JavaScript, TypeScript, React, React
+            Native, Next.js, and Python.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
@@ -65,7 +68,7 @@ export function Hero() {
             >
               View My Work
             </button>
-            
+
             <a
               href="https://github.com/kingieX"
               target="_blank"
@@ -90,10 +93,10 @@ export function Hero() {
 
       {/* Code-themed decoration */}
       <div className="absolute top-20 right-10 text-[#4F8CFF]/20 text-6xl hidden lg:block font-mono">
-        {'{}'}
+        {"{}"}
       </div>
       <div className="absolute bottom-20 left-10 text-[#4F8CFF]/20 text-6xl hidden lg:block font-mono">
-        {'</>'}
+        {"</>"}
       </div>
     </section>
   );

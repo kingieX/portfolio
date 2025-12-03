@@ -1,42 +1,58 @@
-import React from 'react';
-import { motion } from 'motion/react';
+import React from "react";
+import { motion } from "motion/react";
 
 export function TechStack() {
   const techCategories = [
     {
-      category: 'Frontend',
+      category: "Frontend",
       technologies: [
-        { name: 'React', icon: '⚛️' },
-        { name: 'Next.js', icon: '▲' },
-        { name: 'JavaScript', icon: 'JS' },
-        { name: 'TypeScript', icon: 'TS' },
-        { name: 'HTML', icon: 'HTML' },
-        { name: 'CSS', icon: 'CSS' },
-        { name: 'Tailwind CSS', icon: '🎨' },
+        { name: "React", icon: "⚛️" },
+        { name: "Redux", icon: "🌀" },
+        { name: "React Native", icon: "📱" },
+        { name: "Next.js", icon: "▲" },
+        { name: "JavaScript", icon: "JS" },
+        { name: "TypeScript", icon: "TS" },
+        { name: "HTML", icon: "HTML" },
+        { name: "CSS", icon: "CSS" },
+        { name: "Tailwind CSS", icon: "🎨" },
+        { name: "Sass", icon: "💅" },
+        { name: "Shadcn UI", icon: "🧩" },
       ],
     },
     {
-      category: 'Backend',
+      category: "Backend",
       technologies: [
-        { name: 'Node.js', icon: '🟢' },
-        { name: 'Express', icon: '🚂' },
-        { name: 'Python', icon: '🐍' },
+        { name: "Node.js", icon: "🟢" },
+        { name: "Express", icon: "🚂" },
+        { name: "NestJS", icon: "🌐" },
+        { name: "GraphQL", icon: "🔺" },
+        { name: "fastify", icon: "⚡" },
+        { name: "MongoDB", icon: "🍃" },
+        { name: "Firebase", icon: "🔥" },
+        { name: "SQL", icon: "🗄️" },
+        { name: "Python", icon: "🐍" },
       ],
     },
     {
-      category: 'Tools & Others',
+      category: "Tools & Others",
       technologies: [
-        { name: 'Git', icon: '📦' },
-        { name: 'GitHub', icon: '🐙' },
-        { name: 'VS Code', icon: '💻' },
-        { name: 'npm', icon: '📦' },
-        { name: 'Chrome Extensions', icon: '🧩' },
+        { name: "Git & GitHub", icon: "📦" },
+        { name: "Docker", icon: "🐳" },
+        { name: "Chrome Extensions", icon: "🧩" },
+        { name: "Figma", icon: "🎨" },
+        { name: "vagrant", icon: "📦" },
+        { name: "AWS", icon: "AWS" },
+        { name: "Jest", icon: "🃏" },
+        { name: "Notion", icon: "🗒️" },
       ],
     },
   ];
 
   return (
-    <section id="tech-stack" className="py-24 px-6 lg:px-8 bg-white dark:bg-[#0D1117]">
+    <section
+      id="tech-stack"
+      className="py-24 px-6 lg:px-8 bg-white dark:bg-[#0D1117]"
+    >
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -65,7 +81,7 @@ export function TechStack() {
               <h3 className="text-2xl mb-8 text-center md:text-left">
                 <span className="text-[#4F8CFF]">//</span> {category.category}
               </h3>
-              
+
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
                 {category.technologies.map((tech, techIndex) => (
                   <motion.div
@@ -101,18 +117,26 @@ export function TechStack() {
           viewport={{ once: true }}
           className="mt-20 bg-gradient-to-r from-[#4F8CFF]/10 to-[#00AEEF]/10 rounded-2xl p-8 border border-[#4F8CFF]/20"
         >
-          <div className="grid md:grid-cols-3 gap-8 text-center">
+          <div className="grid md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-4xl text-[#4F8CFF] mb-2">5+</div>
-              <p className="text-gray-600 dark:text-[#9CA3AF]">Years Learning</p>
+              <div className="text-4xl text-[#4F8CFF] mb-2">4+</div>
+              <p className="text-gray-600 dark:text-[#9CA3AF]">
+                Years Experience
+              </p>
             </div>
             <div>
-              <div className="text-4xl text-[#4F8CFF] mb-2">15+</div>
+              <div className="text-4xl text-[#4F8CFF] mb-2">50+</div>
+              <p className="text-gray-600 dark:text-[#9CA3AF]">Projects Done</p>
+            </div>
+            <div>
+              <div className="text-4xl text-[#4F8CFF] mb-2">25+</div>
               <p className="text-gray-600 dark:text-[#9CA3AF]">Technologies</p>
             </div>
             <div>
               <div className="text-4xl text-[#4F8CFF] mb-2">∞</div>
-              <p className="text-gray-600 dark:text-[#9CA3AF]">Passion for Learning</p>
+              <p className="text-gray-600 dark:text-[#9CA3AF]">
+                Passion for Learning
+              </p>
             </div>
           </div>
         </motion.div>

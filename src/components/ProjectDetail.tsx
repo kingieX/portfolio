@@ -1,9 +1,9 @@
-import React from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, Github, ExternalLink, CheckCircle2 } from 'lucide-react';
-import { motion } from 'motion/react';
-import { ImageWithFallback } from './figma/ImageWithFallback';
-import { projects } from '../data/projects';
+import React from "react";
+import { useParams, Link } from "react-router-dom";
+import { ArrowLeft, Github, ExternalLink, CheckCircle2 } from "lucide-react";
+import { motion } from "motion/react";
+import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { projects } from "../data/projects";
 
 export function ProjectDetail() {
   const { id } = useParams<{ id: string }>();
@@ -32,7 +32,7 @@ export function ProjectDetail() {
           transition={{ duration: 0.4 }}
         >
           <Link
-            to="/"
+            to="/projects"
             className="inline-flex items-center gap-2 text-[#4F8CFF] hover:text-[#00AEEF] mb-8 transition-colors"
           >
             <ArrowLeft size={20} />
@@ -164,7 +164,9 @@ export function ProjectDetail() {
                 className="flex items-start gap-3 p-4 bg-white dark:bg-[#161B22] rounded-xl border border-gray-200 dark:border-[#4F8CFF]/20"
               >
                 <CheckCircle2 className="w-6 h-6 text-[#4F8CFF] flex-shrink-0 mt-0.5" />
-                <span className="text-gray-700 dark:text-[#E2E8F0]">{feature}</span>
+                <span className="text-gray-700 dark:text-[#E2E8F0]">
+                  {feature}
+                </span>
               </motion.div>
             ))}
           </div>

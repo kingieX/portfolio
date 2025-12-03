@@ -1,25 +1,65 @@
-import React from 'react';
-import { Code2, Database, Chrome, Zap, Users, Target } from 'lucide-react';
-import { motion } from 'motion/react';
-import { ImageWithFallback } from './figma/ImageWithFallback';
+import React from "react";
+import { Code2, Database, Chrome, Zap, Users, Target } from "lucide-react";
+import { motion } from "motion/react";
+import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 export function About() {
   const whatIDo = [
-    { icon: Code2, title: 'Frontend Development', description: 'Building responsive and intuitive user interfaces' },
-    { icon: Database, title: 'Backend Development', description: 'Creating scalable server-side applications' },
-    { icon: Chrome, title: 'Chrome Extensions', description: 'Developing browser extensions and tools' },
-    { icon: Zap, title: 'API & Microservices', description: 'Designing robust and efficient APIs' },
+    {
+      icon: Code2,
+      title: "Frontend Development",
+      description: "Building responsive and intuitive user interfaces",
+    },
+    {
+      icon: Database,
+      title: "Backend Development",
+      description: "Creating scalable server-side applications",
+    },
+    {
+      icon: Zap,
+      title: "Mobile Apps",
+      description: "Developing cross-platform mobile applications",
+    },
+    {
+      icon: Chrome,
+      title: "Chrome Extensions",
+      description: "Developing browser extensions and tools",
+    },
+    {
+      icon: Zap,
+      title: "API & Microservices",
+      description: "Designing robust and efficient APIs",
+    },
   ];
 
   const values = [
-    { icon: Code2, title: 'Clean Code', description: 'Writing maintainable and readable code' },
-    { icon: Zap, title: 'Performance', description: 'Optimizing for speed and efficiency' },
-    { icon: Users, title: 'Accessibility', description: 'Building inclusive experiences' },
-    { icon: Target, title: 'Usability', description: 'Focusing on user experience' },
+    {
+      icon: Code2,
+      title: "Clean Code",
+      description: "Writing maintainable and readable code",
+    },
+    {
+      icon: Zap,
+      title: "Performance",
+      description: "Optimizing for speed and efficiency",
+    },
+    {
+      icon: Users,
+      title: "Accessibility",
+      description: "Building inclusive experiences",
+    },
+    {
+      icon: Target,
+      title: "Usability",
+      description: "Focusing on user experience",
+    },
   ];
 
   return (
-    <section id="about" className="py-24 px-6 lg:px-8 bg-gray-50 dark:bg-[#161B22]">
+    <section
+      id="about"
+      className="py-24 px-6 lg:px-8 bg-gray-50 dark:bg-[#161B22]"
+    >
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -62,25 +102,72 @@ export function About() {
             className="space-y-6"
           >
             <p className="text-lg text-gray-700 dark:text-[#9CA3AF] leading-relaxed">
-              I'm a software engineer passionate about building scalable, intuitive solutions using 
-              JavaScript, TypeScript, React, Next.js, Python and modern tools. I enjoy solving complex 
-              problems, collaborating on meaningful projects, and constantly learning new technologies.
+              I'm a software engineer passionate about building scalable,
+              intuitive solutions using JavaScript, TypeScript, React, React
+              Native, Next.js, Python and modern tools. I enjoy solving complex
+              problems, collaborating on meaningful projects, and constantly
+              learning new technologies.
             </p>
 
             <div className="bg-white dark:bg-[#0D1117] rounded-xl p-6 shadow-lg border border-gray-200 dark:border-[#4F8CFF]/20">
-              <h3 className="text-xl mb-4 text-[#4F8CFF]">Currently Working On</h3>
+              <h3 className="text-xl mb-4 text-[#4F8CFF]">
+                Currently Working On
+              </h3>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-[#4F8CFF] rounded-full mt-2 flex-shrink-0" />
-                  <span className="text-gray-700 dark:text-[#9CA3AF]">Improving React/Next.js full-stack skills</span>
+                  <span className="text-gray-700 dark:text-[#9CA3AF]">
+                    Improving React/Next.js full-stack skills
+                  </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-[#4F8CFF] rounded-full mt-2 flex-shrink-0" />
-                  <span className="text-gray-700 dark:text-[#9CA3AF]">Building better developer tools</span>
+                  <span className="text-gray-700 dark:text-[#9CA3AF]">
+                    Building better mobile applications with React Native
+                  </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-[#4F8CFF] rounded-full mt-2 flex-shrink-0" />
-                  <span className="text-gray-700 dark:text-[#9CA3AF]">Expanding open-source contributions</span>
+                  <span className="text-gray-700 dark:text-[#9CA3AF]">
+                    Expanding open-source contributions
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-[#4F8CFF] rounded-full mt-2 flex-shrink-0" />
+                  <span className="text-gray-700 dark:text-[#9CA3AF]">
+                    Learning advanced backend development with Node.js and
+                    Python
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-[#4F8CFF] rounded-full mt-2 flex-shrink-0" />
+                  <span className="text-gray-700 dark:text-[#9CA3AF]">
+                    Exploring cloud services and DevOps practices
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-[#4F8CFF] rounded-full mt-2 flex-shrink-0" />
+                  <span className="text-gray-700 dark:text-[#9CA3AF]">
+                    Enhancing UI/UX design skills
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-[#4F8CFF] rounded-full mt-2 flex-shrink-0" />
+                  <span className="text-gray-700 dark:text-[#9CA3AF]">
+                    Building personal projects to experiment with new tech
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-[#4F8CFF] rounded-full mt-2 flex-shrink-0" />
+                  <span className="text-gray-700 dark:text-[#9CA3AF]">
+                    Networking with other developers and tech communities
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-[#4F8CFF] rounded-full mt-2 flex-shrink-0" />
+                  <span className="text-gray-700 dark:text-[#9CA3AF]">
+                    Staying updated with industry trends and best practices
+                  </span>
                 </li>
               </ul>
             </div>
@@ -95,8 +182,10 @@ export function About() {
           viewport={{ once: true }}
           className="mb-20"
         >
-          <h3 className="text-3xl mb-12 text-center">What I <span className="text-[#4F8CFF]">Do</span></h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <h3 className="text-3xl mb-12 text-center">
+            What I <span className="text-[#4F8CFF]">Do</span>
+          </h3>
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
             {whatIDo.map((item, index) => (
               <motion.div
                 key={item.title}
@@ -108,7 +197,9 @@ export function About() {
               >
                 <item.icon className="w-12 h-12 text-[#4F8CFF] mb-4" />
                 <h4 className="text-lg mb-2">{item.title}</h4>
-                <p className="text-sm text-gray-600 dark:text-[#9CA3AF]">{item.description}</p>
+                <p className="text-sm text-gray-600 dark:text-[#9CA3AF]">
+                  {item.description}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -121,7 +212,9 @@ export function About() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-3xl mb-12 text-center">Core <span className="text-[#4F8CFF]">Values</span></h3>
+          <h3 className="text-3xl mb-12 text-center">
+            Core <span className="text-[#4F8CFF]">Values</span>
+          </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((item, index) => (
               <motion.div
@@ -134,7 +227,9 @@ export function About() {
               >
                 <item.icon className="w-10 h-10 text-[#4F8CFF] mb-3" />
                 <h4 className="text-lg mb-2">{item.title}</h4>
-                <p className="text-sm text-gray-600 dark:text-[#9CA3AF]">{item.description}</p>
+                <p className="text-sm text-gray-600 dark:text-[#9CA3AF]">
+                  {item.description}
+                </p>
               </motion.div>
             ))}
           </div>

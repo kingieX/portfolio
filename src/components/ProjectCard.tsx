@@ -1,9 +1,9 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Github, ExternalLink } from 'lucide-react';
-import { motion } from 'motion/react';
-import { ImageWithFallback } from './figma/ImageWithFallback';
-import { Project } from '../data/projects';
+import React from "react";
+import { Link } from "react-router-dom";
+import { Github, ExternalLink } from "lucide-react";
+import { motion } from "motion/react";
+import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { Project } from "../data/projects";
 
 interface ProjectCardProps {
   project: Project;
@@ -27,7 +27,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0D1117] via-[#0D1117]/50 to-transparent opacity-60" />
-        
+
         {/* Hover Overlay */}
         <div className="absolute inset-0 bg-[#4F8CFF]/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
           <a
@@ -40,7 +40,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
             <Github size={24} />
           </a>
           <Link
-            to={`/project/${project.id}`}
+            to={project.liveLink}
             className="p-3 bg-white text-[#4F8CFF] rounded-full hover:scale-110 transition-transform"
           >
             <ExternalLink size={24} />
@@ -53,7 +53,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         <h3 className="text-2xl mb-3 group-hover:text-[#4F8CFF] transition-colors">
           {project.title}
         </h3>
-        
+
         <p className="text-gray-600 dark:text-[#9CA3AF] mb-4 line-clamp-2">
           {project.shortDescription}
         </p>

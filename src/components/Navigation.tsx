@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Moon, Sun } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X, Moon, Sun } from "lucide-react";
 
 interface NavigationProps {
   darkMode: boolean;
@@ -17,16 +17,16 @@ export function Navigation({ darkMode, toggleTheme }: NavigationProps) {
       setIsScrolled(window.scrollY > 20);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToSection = (sectionId: string) => {
-    if (location.pathname !== '/') {
+    if (location.pathname !== "/") {
       window.location.href = `/#${sectionId}`;
       return;
     }
-    
+
     const element = document.getElementById(sectionId);
     if (element) {
       const offset = 80;
@@ -35,26 +35,26 @@ export function Navigation({ darkMode, toggleTheme }: NavigationProps) {
 
       window.scrollTo({
         top: offsetPosition,
-        behavior: 'smooth'
+        behavior: "smooth",
       });
     }
     setIsMobileMenuOpen(false);
   };
 
   const navItems = [
-    { label: 'Home', id: 'hero' },
-    { label: 'About', id: 'about' },
-    { label: 'Skills', id: 'tech-stack' },
-    { label: 'Projects', id: 'projects' },
-    { label: 'Contact', id: 'contact' },
+    { label: "Home", id: "hero" },
+    { label: "About", id: "about" },
+    { label: "Skills", id: "tech-stack" },
+    { label: "Projects", id: "projects" },
+    { label: "Contact", id: "contact" },
   ];
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/90 dark:bg-[#161B22]/90 backdrop-blur-md shadow-lg'
-          : 'bg-transparent'
+          ? "bg-white/90 dark:bg-[#161B22]/90 backdrop-blur-md shadow-lg"
+          : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -63,11 +63,11 @@ export function Navigation({ darkMode, toggleTheme }: NavigationProps) {
           <Link
             to="/"
             className="text-xl tracking-tight hover:text-[#4F8CFF] transition-colors"
-            onClick={() => scrollToSection('hero')}
+            onClick={() => scrollToSection("hero")}
           >
-            <span className="text-[#4F8CFF]">{'<'}</span>
+            <span className="text-[#4F8CFF]">{"<"}</span>
             kingieX
-            <span className="text-[#4F8CFF]">{'/>'}</span>
+            <span className="text-[#4F8CFF]">{"/>"}</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -81,7 +81,7 @@ export function Navigation({ darkMode, toggleTheme }: NavigationProps) {
                 {item.label}
               </button>
             ))}
-            
+
             {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
