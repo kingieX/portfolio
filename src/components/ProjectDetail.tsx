@@ -75,6 +75,14 @@ export function ProjectDetail() {
               <Github size={20} />
               View on GitHub
             </a>
+            <Link
+              to={project.liveLink}
+              target="_blank"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#4F8CFF] hover:bg-[#00AEEF] text-white rounded-xl transition-all duration-300 hover:scale-105"
+            >
+              <ExternalLink size={24} />
+              Launch app
+            </Link>
           </div>
         </motion.div>
 

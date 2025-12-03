@@ -77,7 +77,7 @@ export function Projects() {
 
             <div className="flex flex-wrap justify-center gap-4">
               <a
-                href="https://github.com/kingieX"
+                href="https://github.com/kingieX?tab=repositories"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-6 py-3 bg-[#4F8CFF] hover:bg-[#00AEEF] text-white rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#4F8CFF]/50"

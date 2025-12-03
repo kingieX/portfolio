@@ -42,6 +42,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
           <Link
             to={project.liveLink}
             className="p-3 bg-white text-[#4F8CFF] rounded-full hover:scale-110 transition-transform"
+            target="_blank"
           >
             <ExternalLink size={24} />
           </Link>
