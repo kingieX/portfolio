@@ -1,5 +1,13 @@
-import React from 'react';
-import { Github, Heart } from 'lucide-react';
+import React from "react";
+import {
+  Github,
+  Heart,
+  Linkedin,
+  Mail,
+  Phone,
+  Twitter,
+  Youtube,
+} from "lucide-react";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -11,9 +19,9 @@ export function Footer() {
           {/* Brand */}
           <div>
             <div className="text-xl mb-3">
-              <span className="text-[#4F8CFF]">{'<'}</span>
+              <span className="text-[#4F8CFF]">{"<"}</span>
               kingieX
-              <span className="text-[#4F8CFF]">{'/>'}</span>
+              <span className="text-[#4F8CFF]">{"/>"}</span>
             </div>
             <p className="text-sm text-gray-600 dark:text-[#9CA3AF]">
               Building innovative solutions with modern web technologies
@@ -27,8 +35,8 @@ export function Footer() {
               <li>
                 <button
                   onClick={() => {
-                    const element = document.getElementById('about');
-                    element?.scrollIntoView({ behavior: 'smooth' });
+                    const element = document.getElementById("about");
+                    element?.scrollIntoView({ behavior: "smooth" });
                   }}
                   className="text-gray-600 dark:text-[#9CA3AF] hover:text-[#4F8CFF] transition-colors"
                 >
@@ -38,8 +46,8 @@ export function Footer() {
               <li>
                 <button
                   onClick={() => {
-                    const element = document.getElementById('tech-stack');
-                    element?.scrollIntoView({ behavior: 'smooth' });
+                    const element = document.getElementById("tech-stack");
+                    element?.scrollIntoView({ behavior: "smooth" });
                   }}
                   className="text-gray-600 dark:text-[#9CA3AF] hover:text-[#4F8CFF] transition-colors"
                 >
@@ -49,8 +57,8 @@ export function Footer() {
               <li>
                 <button
                   onClick={() => {
-                    const element = document.getElementById('projects');
-                    element?.scrollIntoView({ behavior: 'smooth' });
+                    const element = document.getElementById("projects");
+                    element?.scrollIntoView({ behavior: "smooth" });
                   }}
                   className="text-gray-600 dark:text-[#9CA3AF] hover:text-[#4F8CFF] transition-colors"
                 >
@@ -60,8 +68,8 @@ export function Footer() {
               <li>
                 <button
                   onClick={() => {
-                    const element = document.getElementById('contact');
-                    element?.scrollIntoView({ behavior: 'smooth' });
+                    const element = document.getElementById("contact");
+                    element?.scrollIntoView({ behavior: "smooth" });
                   }}
                   className="text-gray-600 dark:text-[#9CA3AF] hover:text-[#4F8CFF] transition-colors"
                 >
@@ -82,7 +90,65 @@ export function Footer() {
                 className="p-3 bg-white dark:bg-[#0D1117] rounded-lg border border-gray-200 dark:border-[#4F8CFF]/20 hover:border-[#4F8CFF] transition-all hover:scale-110"
                 aria-label="GitHub"
               >
-                <Github size={20} className="text-gray-600 dark:text-[#E2E8F0]" />
+                <Github
+                  size={20}
+                  className="text-gray-600 dark:text-[#E2E8F0]"
+                />
+              </a>
+              <a
+                href="https://linkedin.com/in/chima-kingsley-nnachi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 bg-white dark:bg-[#0D1117] rounded-lg border border-gray-200 dark:border-[#4F8CFF]/20 hover:border-[#4F8CFF] transition-all hover:scale-110"
+                aria-label="LinkedIn"
+              >
+                <Linkedin
+                  size={20}
+                  className="text-gray-600 dark:text-[#E2E8F0]"
+                />
+              </a>
+              <a
+                href="https://x.com/ObaTheDeveloper"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 bg-white dark:bg-[#0D1117] rounded-lg border border-gray-200 dark:border-[#4F8CFF]/20 hover:border-[#4F8CFF] transition-all hover:scale-110"
+                aria-label="X"
+              >
+                <Twitter
+                  size={20}
+                  className="text-gray-600 dark:text-[#E2E8F0]"
+                />
+              </a>
+              {/* <a
+                href="mailto:chimakingsley216@gmail.com"
+                className="p-3 bg-white dark:bg-[#0D1117] rounded-lg border border-gray-200 dark:border-[#4F8CFF]/20 hover:border-[#4F8CFF] transition-all hover:scale-110"
+                aria-label="Email"
+              >
+                <Mail size={20} className="text-gray-600 dark:text-[#E2E8F0]" />
+              </a> */}
+              <a
+                href="https://wa.me/2349036381640"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 bg-white dark:bg-[#0D1117] rounded-lg border border-gray-200 dark:border-[#4F8CFF]/20 hover:border-[#4F8CFF] transition-all hover:scale-110"
+                aria-label="WhatsApp"
+              >
+                <Phone
+                  size={20}
+                  className="text-gray-600 dark:text-[#E2E8F0]"
+                />
+              </a>
+              <a
+                href="https://www.youtube.com/@AdiKlinex-journey"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 bg-white dark:bg-[#0D1117] rounded-lg border border-gray-200 dark:border-[#4F8CFF]/20 hover:border-[#4F8CFF] transition-all hover:scale-110"
+                aria-label="YouTube"
+              >
+                <Youtube
+                  size={20}
+                  className="text-gray-600 dark:text-[#E2E8F0]"
+                />
               </a>
             </div>
           </div>
@@ -92,7 +158,8 @@ export function Footer() {
         <div className="pt-8 border-t border-gray-200 dark:border-[#4F8CFF]/20 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-600 dark:text-[#9CA3AF]">
           <p>© {currentYear} Nnachi Chima Kingsley. All rights reserved.</p>
           <p className="flex items-center gap-2">
-            Built with <Heart size={16} className="text-[#4F8CFF]" /> using React & Tailwind CSS
+            Built with <Heart size={16} className="text-[#4F8CFF]" /> using
+            React & Tailwind CSS
           </p>
         </div>
       </div>

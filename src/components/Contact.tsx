@@ -1,12 +1,20 @@
-import React, { useState } from 'react';
-import { Github, Linkedin, Mail, Send, CheckCircle } from 'lucide-react';
-import { motion } from 'motion/react';
+import React, { useState } from "react";
+import {
+  Github,
+  Linkedin,
+  Mail,
+  Send,
+  CheckCircle,
+  Twitter,
+  Phone,
+} from "lucide-react";
+import { motion } from "motion/react";
 
 export function Contact() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
+    name: "",
+    email: "",
+    message: "",
   });
   const [submitted, setSubmitted] = useState(false);
 
@@ -16,11 +24,13 @@ export function Contact() {
     setSubmitted(true);
     setTimeout(() => {
       setSubmitted(false);
-      setFormData({ name: '', email: '', message: '' });
+      setFormData({ name: "", email: "", message: "" });
     }, 3000);
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -28,7 +38,10 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 px-6 lg:px-8 bg-white dark:bg-[#0D1117]">
+    <section
+      id="contact"
+      className="py-24 px-6 lg:px-8 bg-white dark:bg-[#0D1117]"
+    >
       <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -41,8 +54,8 @@ export function Contact() {
           </h2>
           <div className="w-20 h-1 bg-[#4F8CFF] mx-auto mb-6 rounded-full" />
           <p className="text-center text-gray-600 dark:text-[#9CA3AF] max-w-2xl mx-auto mb-16">
-            I'm open to freelance projects, collaborations, and full-time opportunities. 
-            Let's build something amazing together!
+            I'm open to freelance projects, collaborations, and full-time
+            opportunities. Let's build something amazing together!
           </p>
         </motion.div>
 
@@ -56,7 +69,10 @@ export function Contact() {
           >
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block mb-2 text-gray-700 dark:text-[#E2E8F0]">
+                <label
+                  htmlFor="name"
+                  className="block mb-2 text-gray-700 dark:text-[#E2E8F0]"
+                >
                   Name
                 </label>
                 <input
@@ -72,7 +88,10 @@ export function Contact() {
               </div>
 
               <div>
-                <label htmlFor="email" className="block mb-2 text-gray-700 dark:text-[#E2E8F0]">
+                <label
+                  htmlFor="email"
+                  className="block mb-2 text-gray-700 dark:text-[#E2E8F0]"
+                >
                   Email
                 </label>
                 <input
@@ -88,7 +107,10 @@ export function Contact() {
               </div>
 
               <div>
-                <label htmlFor="message" className="block mb-2 text-gray-700 dark:text-[#E2E8F0]">
+                <label
+                  htmlFor="message"
+                  className="block mb-2 text-gray-700 dark:text-[#E2E8F0]"
+                >
                   Message
                 </label>
                 <textarea
@@ -134,14 +156,14 @@ export function Contact() {
             <div>
               <h3 className="text-2xl mb-6">Let's Connect</h3>
               <p className="text-gray-600 dark:text-[#9CA3AF] leading-relaxed mb-8">
-                Whether you have a question, a project idea, or just want to say hi, 
-                I'll try my best to get back to you as soon as possible.
+                Whether you have a question, a project idea, or just want to say
+                hi, I'll try my best to get back to you as soon as possible.
               </p>
             </div>
 
             {/* Social Links */}
             <div className="space-y-4">
-              <a
+              {/* <a
                 href="https://github.com/kingieX"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -151,13 +173,37 @@ export function Contact() {
                   <Github className="w-6 h-6 text-[#4F8CFF] group-hover:text-white transition-colors" />
                 </div>
                 <div>
-                  <div className="text-gray-700 dark:text-[#E2E8F0]">GitHub</div>
-                  <div className="text-sm text-gray-500 dark:text-[#9CA3AF]">github.com/kingieX</div>
+                  <div className="text-gray-700 dark:text-[#E2E8F0]">
+                    GitHub
+                  </div>
+                  <div className="text-sm text-gray-500 dark:text-[#9CA3AF]">
+                    github.com/kingieX
+                  </div>
+                </div>
+              </a> */}
+
+              {/* twitter */}
+              <a
+                href="https://x.com/ObaTheDeveloper"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 p-4 bg-white dark:bg-[#161B22] rounded-xl border border-gray-200 dark:border-[#4F8CFF]/20 hover:border-[#4F8CFF] transition-all duration-300 hover:transform hover:-translate-y-1 group"
+              >
+                <div className="p-3 bg-[#4F8CFF]/10 rounded-lg group-hover:bg-[#4F8CFF] transition-colors">
+                  <Twitter className="w-6 h-6 text-[#4F8CFF] group-hover:text-white transition-colors" />
+                </div>
+                <div>
+                  <div className="text-gray-700 dark:text-[#E2E8F0]">
+                    Twitter
+                  </div>
+                  <div className="text-sm text-gray-500 dark:text-[#9CA3AF]">
+                    @ObaTheDeveloper
+                  </div>
                 </div>
               </a>
 
               <a
-                href="mailto:contact@example.com"
+                href="mailto:chimakingsley216@gmail.com"
                 className="flex items-center gap-4 p-4 bg-white dark:bg-[#161B22] rounded-xl border border-gray-200 dark:border-[#4F8CFF]/20 hover:border-[#4F8CFF] transition-all duration-300 hover:transform hover:-translate-y-1 group"
               >
                 <div className="p-3 bg-[#4F8CFF]/10 rounded-lg group-hover:bg-[#4F8CFF] transition-colors">
@@ -165,26 +211,55 @@ export function Contact() {
                 </div>
                 <div>
                   <div className="text-gray-700 dark:text-[#E2E8F0]">Email</div>
-                  <div className="text-sm text-gray-500 dark:text-[#9CA3AF]">contact@example.com</div>
+                  <div className="text-sm text-gray-500 dark:text-[#9CA3AF]">
+                    chimakingsley216@gmail.com
+                  </div>
                 </div>
               </a>
 
-              <div className="flex items-center gap-4 p-4 bg-white dark:bg-[#161B22] rounded-xl border border-gray-200 dark:border-[#4F8CFF]/20 opacity-50">
-                <div className="p-3 bg-[#4F8CFF]/10 rounded-lg">
-                  <Linkedin className="w-6 h-6 text-[#4F8CFF]" />
+              <a
+                href="https://www.linkedin.com/in/chima-kingsley-nnachi"
+                target="_blank"
+                className="flex items-center gap-4 p-4 bg-white dark:bg-[#161B22] rounded-xl border border-gray-200 dark:border-[#4F8CFF]/20 hover:border-[#4F8CFF] transition-all duration-300 hover:transform hover:-translate-y-1 group"
+              >
+                <div className="p-3 bg-[#4F8CFF]/10 rounded-lg group-hover:bg-[#4F8CFF] transition-colors">
+                  <Linkedin className="w-6 h-6 text-[#4F8CFF] group-hover:text-white transition-colors" />
                 </div>
                 <div>
-                  <div className="text-gray-700 dark:text-[#E2E8F0]">LinkedIn</div>
-                  <div className="text-sm text-gray-500 dark:text-[#9CA3AF]">Coming soon</div>
+                  <div className="text-gray-700 dark:text-[#E2E8F0]">
+                    LinkedIn
+                  </div>
+                  <div className="text-sm text-gray-500 dark:text-[#9CA3AF]">
+                    Chima Nnachi Kingsley
+                  </div>
                 </div>
-              </div>
+              </a>
+
+              <a
+                href="https://wa.me/2349036381640"
+                target="_blank"
+                className="flex items-center gap-4 p-4 bg-white dark:bg-[#161B22] rounded-xl border border-gray-200 dark:border-[#4F8CFF]/20 hover:border-[#4F8CFF] transition-all duration-300 hover:transform hover:-translate-y-1 group"
+              >
+                <div className="p-3 bg-[#4F8CFF]/10 rounded-lg group-hover:bg-[#4F8CFF] transition-colors">
+                  <Phone className="w-6 h-6 text-[#4F8CFF] group-hover:text-white transition-colors" />
+                </div>
+                <div>
+                  <div className="text-gray-700 dark:text-[#E2E8F0]">
+                    WhatsApp
+                  </div>
+                  <div className="text-sm text-gray-500 dark:text-[#9CA3AF]">
+                    +234 803 638 1640
+                  </div>
+                </div>
+              </a>
             </div>
 
             {/* Additional Info */}
             <div className="p-6 bg-gradient-to-br from-[#4F8CFF]/10 to-[#00AEEF]/10 rounded-xl border border-[#4F8CFF]/20">
               <h4 className="mb-3">Availability</h4>
               <p className="text-sm text-gray-600 dark:text-[#9CA3AF]">
-                Currently available for freelance projects and open to full-time opportunities.
+                Currently available for freelance projects and open to full-time
+                opportunities.
               </p>
             </div>
           </motion.div>
