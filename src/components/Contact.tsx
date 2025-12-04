@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import {
   Github,
   Linkedin,
@@ -9,32 +9,41 @@ import {
   Phone,
 } from "lucide-react";
 import { motion } from "motion/react";
+import emailjs from "@emailjs/browser";
 
 export function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  const formRef = useRef<HTMLFormElement>(null);
+
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate form submission
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({ name: "", email: "", message: "" });
-    }, 3000);
-  };
+    setLoading(true);
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID!,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID!,
+        formRef.current!,
+        {
+          publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY!,
+        }
+      )
+      .then(
+        () => {
+          setLoading(false);
+          setSubmitted(true);
+          formRef.current?.reset();
+
+          setTimeout(() => setSubmitted(false), 3000);
+        },
+        (error) => {
+          console.error("EmailJS Error:", error.text);
+          setLoading(false);
+          alert("❌ Failed to send message.");
+        }
+      );
   };
 
   return (
@@ -67,70 +76,86 @@ export function Contact() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
+              {/* Name */}
               <div>
-                <label
-                  htmlFor="name"
-                  className="block mb-2 text-gray-700 dark:text-[#E2E8F0]"
-                >
+                <label className="block mb-2 text-gray-700 dark:text-[#E2E8F0]">
                   Name
                 </label>
                 <input
                   type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
+                  name="from_name"
                   required
-                  className="w-full px-4 py-3 bg-white dark:bg-[#161B22] border border-gray-300 dark:border-[#4F8CFF]/20 rounded-xl focus:outline-none focus:border-[#4F8CFF] transition-colors text-gray-900 dark:text-[#E2E8F0]"
+                  className="w-full px-4 py-3 bg-white dark:bg-[#161B22] border border-gray-300 dark:border-[#4F8CFF]/20 
+          rounded-xl focus:outline-none focus:border-[#4F8CFF] text-gray-900 dark:text-[#E2E8F0]"
                   placeholder="Your name"
                 />
               </div>
 
+              {/* Email */}
               <div>
-                <label
-                  htmlFor="email"
-                  className="block mb-2 text-gray-700 dark:text-[#E2E8F0]"
-                >
+                <label className="block mb-2 text-gray-700 dark:text-[#E2E8F0]">
                   Email
                 </label>
                 <input
                   type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
+                  name="from_email"
                   required
-                  className="w-full px-4 py-3 bg-white dark:bg-[#161B22] border border-gray-300 dark:border-[#4F8CFF]/20 rounded-xl focus:outline-none focus:border-[#4F8CFF] transition-colors text-gray-900 dark:text-[#E2E8F0]"
+                  className="w-full px-4 py-3 bg-white dark:bg-[#161B22] border border-gray-300 dark:border-[#4F8CFF]/20 
+          rounded-xl focus:outline-none focus:border-[#4F8CFF] text-gray-900 dark:text-[#E2E8F0]"
                   placeholder="your.email@example.com"
                 />
               </div>
 
+              {/* Subject */}
               <div>
-                <label
-                  htmlFor="message"
-                  className="block mb-2 text-gray-700 dark:text-[#E2E8F0]"
-                >
+                <label className="block mb-2 text-gray-700 dark:text-[#E2E8F0]">
+                  Subject
+                </label>
+                <input
+                  type="text"
+                  name="subject"
+                  required
+                  className="w-full px-4 py-3 bg-white dark:bg-[#161B22] border border-gray-300 dark:border-[#4F8CFF]/20 
+          rounded-xl focus:outline-none focus:border-[#4F8CFF] text-gray-900 dark:text-[#E2E8F0]"
+                  placeholder="Message subject"
+                />
+              </div>
+
+              {/* Message */}
+              <div>
+                <label className="block mb-2 text-gray-700 dark:text-[#E2E8F0]">
                   Message
                 </label>
                 <textarea
-                  id="message"
                   name="message"
-                  value={formData.message}
-                  onChange={handleChange}
                   required
                   rows={6}
-                  className="w-full px-4 py-3 bg-white dark:bg-[#161B22] border border-gray-300 dark:border-[#4F8CFF]/20 rounded-xl focus:outline-none focus:border-[#4F8CFF] transition-colors resize-none text-gray-900 dark:text-[#E2E8F0]"
+                  className="w-full px-4 py-3 bg-white dark:bg-[#161B22] border border-gray-300 dark:border-[#4F8CFF]/20 
+          rounded-xl focus:outline-none focus:border-[#4F8CFF] resize-none text-gray-900 dark:text-[#E2E8F0]"
                   placeholder="Tell me about your project..."
                 />
               </div>
 
+              {/* Hidden fields required by your EmailJS template */}
+              <input
+                type="hidden"
+                name="to_name"
+                value="Nnachi Chima Kingsley"
+              />
+              <input type="hidden" name="reply_to" value="" />
+
+              {/* Submit Button */}
               <button
                 type="submit"
-                disabled={submitted}
-                className="w-full px-6 py-4 bg-[#4F8CFF] hover:bg-[#00AEEF] text-white rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#4F8CFF]/50 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 flex items-center justify-center gap-2"
+                disabled={loading || submitted}
+                className="w-full px-6 py-4 bg-[#4F8CFF] hover:bg-[#00AEEF] text-white rounded-xl transition-all 
+        duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#4F8CFF]/50 disabled:opacity-50 
+        disabled:cursor-not-allowed flex items-center justify-center gap-2"
               >
-                {submitted ? (
+                {loading ? (
+                  <div className="animate-spin rounded-full h-5 w-5 border-t-2 border-white"></div>
+                ) : submitted ? (
                   <>
                     <CheckCircle size={20} />
                     Message Sent!
@@ -145,7 +170,7 @@ export function Contact() {
             </form>
           </motion.div>
 
-          {/* Contact Info */}
+          {/* CONTACT INFO */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -160,7 +185,6 @@ export function Contact() {
                 hi, I'll try my best to get back to you as soon as possible.
               </p>
             </div>
-
             {/* Social Links */}
             <div className="space-y-4">
               {/* <a
@@ -253,7 +277,6 @@ export function Contact() {
                 </div>
               </a>
             </div>
-
             {/* Additional Info */}
             <div className="p-6 bg-gradient-to-br from-[#4F8CFF]/10 to-[#00AEEF]/10 rounded-xl border border-[#4F8CFF]/20">
               <h4 className="mb-3">Availability</h4>
