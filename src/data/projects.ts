@@ -15,6 +15,29 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "timeflow",
+    title: "TimeFlow",
+    shortDescription:
+      "A pixel‑perfect web application that helps people instantly understand and compare time across multiple time zones — without mental math.",
+    fullDescription:
+      "TimeFlow is a web application designed to simplify the process of understanding and comparing time across multiple time zones. It provides users with an intuitive interface that allows them to visualize time differences without the need for complex calculations.",
+    problem:
+      "Coordinating meetings and events across different time zones can be challenging, often leading to confusion and scheduling conflicts.",
+    solution:
+      "Developed a user-friendly web application that visually represents time zones, allowing users to easily compare times and schedule events without mental math.",
+    role: "Frontend Developer - Designed and implemented the user interface, integrated backend APIs, and optimized performance.",
+    tech: ["React", "TypeScript", "Nextjs", "Tailwind CSS", "shadcn-ui"],
+    github: "https://github.com/kingieX/TimeFlow",
+    liveLink: "https://timeflow-green.vercel.app/",
+    image: "/images/timeflow.png",
+    features: [
+      "Intuitive time zone visualization",
+      "Instant time comparison across multiple zones",
+      "Responsive design for all devices",
+      "Dark mode support",
+    ],
+  },
+  {
     id: "reuse",
     title: "ReUse",
     shortDescription:
