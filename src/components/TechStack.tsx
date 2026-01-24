@@ -1,49 +1,72 @@
 import React from "react";
 import { motion } from "motion/react";
+import {
+  Code2,
+  Smartphone,
+  Layers,
+  FileCode,
+  Type,
+  Palette,
+  Sparkles,
+  Server,
+  Zap,
+  Globe,
+  Triangle,
+  Leaf,
+  Flame,
+  Database,
+  Package,
+  Container,
+  Puzzle,
+  Figma,
+  Cloud,
+  TestTube,
+  FileText,
+} from "lucide-react";
 
 export function TechStack() {
   const techCategories = [
     {
       category: "Frontend",
       technologies: [
-        { name: "React", icon: "⚛️" },
-        { name: "Redux", icon: "🌀" },
-        { name: "React Native", icon: "📱" },
-        { name: "Next.js", icon: "▲" },
-        { name: "JavaScript", icon: "JS" },
-        { name: "TypeScript", icon: "TS" },
-        { name: "HTML", icon: "HTML" },
-        { name: "CSS", icon: "CSS" },
-        { name: "Tailwind CSS", icon: "🎨" },
-        { name: "Sass", icon: "💅" },
-        { name: "Shadcn UI", icon: "🧩" },
+        { name: "React", icon: Code2 },
+        { name: "Redux", icon: Layers },
+        { name: "React Native", icon: Smartphone },
+        { name: "Next.js", icon: Triangle },
+        { name: "JavaScript", icon: FileCode },
+        { name: "TypeScript", icon: Type },
+        { name: "HTML", icon: Code2 },
+        { name: "CSS", icon: Palette },
+        { name: "Tailwind CSS", icon: Sparkles },
+        { name: "Sass", icon: Palette },
+        { name: "Shadcn UI", icon: Puzzle },
       ],
     },
     {
       category: "Backend",
       technologies: [
-        { name: "Node.js", icon: "🟢" },
-        { name: "Express", icon: "🚂" },
-        { name: "NestJS", icon: "🌐" },
-        { name: "GraphQL", icon: "🔺" },
-        { name: "fastify", icon: "⚡" },
-        { name: "MongoDB", icon: "🍃" },
-        { name: "Firebase", icon: "🔥" },
-        { name: "SQL", icon: "🗄️" },
-        { name: "Python", icon: "🐍" },
+        { name: "Node.js", icon: Server },
+        { name: "Express", icon: Zap },
+        { name: "NestJS", icon: Globe },
+        { name: "GraphQL", icon: Triangle },
+        { name: "fastify", icon: Zap },
+        { name: "MongoDB", icon: Leaf },
+        { name: "Firebase", icon: Flame },
+        { name: "SQL", icon: Database },
+        { name: "Python", icon: Code2 },
       ],
     },
     {
       category: "Tools & Others",
       technologies: [
-        { name: "Git & GitHub", icon: "📦" },
-        { name: "Docker", icon: "🐳" },
-        { name: "Chrome Extensions", icon: "🧩" },
-        { name: "Figma", icon: "🎨" },
-        { name: "vagrant", icon: "📦" },
-        { name: "AWS", icon: "AWS" },
-        { name: "Jest", icon: "🃏" },
-        { name: "Notion", icon: "🗒️" },
+        { name: "Git & GitHub", icon: Package },
+        { name: "Docker", icon: Container },
+        { name: "Chrome Extensions", icon: Puzzle },
+        { name: "Figma", icon: Figma },
+        { name: "vagrant", icon: Package },
+        { name: "AWS", icon: Cloud },
+        { name: "Jest", icon: TestTube },
+        { name: "Notion", icon: FileText },
       ],
     },
   ];
@@ -83,27 +106,31 @@ export function TechStack() {
               </h3>
 
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-                {category.technologies.map((tech, techIndex) => (
-                  <motion.div
-                    key={tech.name}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{
-                      duration: 0.4,
-                      delay: categoryIndex * 0.1 + techIndex * 0.05,
-                    }}
-                    viewport={{ once: true }}
-                    whileHover={{ scale: 1.05, y: -5 }}
-                    className="bg-white dark:bg-[#161B22] rounded-xl p-6 shadow-lg border border-gray-200 dark:border-[#4F8CFF]/20 hover:border-[#4F8CFF] transition-all duration-300 flex flex-col items-center justify-center gap-3 cursor-pointer group"
-                  >
-                    <div className="text-4xl group-hover:scale-110 transition-transform duration-300">
-                      {tech.icon}
-                    </div>
-                    <span className="text-sm text-center text-gray-700 dark:text-[#E2E8F0]">
-                      {tech.name}
-                    </span>
-                  </motion.div>
-                ))}
+                {category.technologies.map((tech, techIndex) => {
+                  const IconComponent = tech.icon;
+                  return (
+                    <motion.div
+                      key={tech.name}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{
+                        duration: 0.4,
+                        delay: categoryIndex * 0.1 + techIndex * 0.05,
+                      }}
+                      viewport={{ once: true }}
+                      whileHover={{ scale: 1.05, y: -5 }}
+                      className="bg-white dark:bg-[#161B22] rounded-xl p-6 shadow-lg border border-gray-200 dark:border-[#4F8CFF]/20 hover:border-[#4F8CFF] transition-all duration-300 flex flex-col items-center justify-center gap-3 cursor-pointer group"
+                    >
+                      <IconComponent
+                        className="w-10 h-10 text-[#4F8CFF] group-hover:scale-110 transition-transform duration-300"
+                        strokeWidth={1.5}
+                      />
+                      <span className="text-sm text-center text-gray-700 dark:text-[#E2E8F0]">
+                        {tech.name}
+                      </span>
+                    </motion.div>
+                  );
+                })}
               </div>
             </motion.div>
           ))}
