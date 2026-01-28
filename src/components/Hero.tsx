@@ -62,12 +62,20 @@ export function Hero() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-            <button
+            {/* <button
               onClick={scrollToProjects}
               className="px-8 py-4 bg-[#4F8CFF] hover:bg-[#00AEEF] text-white rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#4F8CFF]/50"
             >
               View My Work
-            </button>
+            </button> */}
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-4 bg-[#4F8CFF] hover:bg-[#00AEEF] text-white rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#4F8CFF]/50 flex items-center justify-center"
+            >
+              View Resume
+            </a>
 
             <a
               href="https://github.com/kingieX"
